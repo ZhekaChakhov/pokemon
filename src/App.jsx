@@ -2,8 +2,40 @@ import React from "react";
 import "./index.scss";
 import icon from "./assets/icon.svg";
 import Chip from "@mui/material/Chip";
+import axios from "axios";
+
+function ucFirst(str) {
+	if (!str) return str;
+
+	return str[0].toUpperCase() + str.slice(1);
+}
 
 function App() {
+	const [data, setData] = React.useState();
+	const [name, setName] = React.useState();
+	const [number, setNumber] = React.useState(1);
+	const [height, setHeight] = React.useState();
+	const [attack, setAttack] = React.useState();
+
+	const URL = `https://pokeapi.co/api/v2/pokemon/${number}`;
+
+	React.useEffect(() => {
+		axios
+			.get(URL)
+			.then((response) => {
+				// console.log(response.data);
+				setData(response.data);
+				setName(response.data.name);
+				setHeight(response.data.height);
+				setAttack(response.data.stats[1].base_stat);
+			})
+			.catch((err) => {
+				window.alert(err);
+			});
+	}, [URL]);
+
+	console.log(data);
+
 	return (
 		<div className="App">
 			<div className="header">
@@ -15,18 +47,101 @@ function App() {
 			</div>
 			<div className="main">
 				<div className="chips">
-					<div className="upper-chips">
-						<Chip label="bulbasaur" className="Chip" />
-						<Chip label="ivysaur" className="Chip" />
-						<Chip label="venusaur" className="Chip" />
+					<div className="chips-container">
+						<Chip
+							label="bulbasaur"
+							className="Chip"
+							onClick={() => {
+								setNumber(1);
+							}}
+						/>
+						<Chip
+							label="ivysaur"
+							className="Chip"
+							onClick={() => {
+								setNumber(2);
+							}}
+						/>
+						<Chip
+							label="venusaur"
+							className="Chip"
+							onClick={() => {
+								setNumber(3);
+							}}
+						/>
 					</div>
-					<div className="lower-chips">
-						<Chip label="charmander" className="Chip" />
-						<Chip label="charizard" className="Chip" />
-						<Chip label="weedle" className="Chip" />
+					<div className="chips-container">
+						<Chip
+							label="charmander"
+							className="Chip"
+							onClick={() => {
+								setNumber(4);
+							}}
+						/>
+						<Chip
+							label="charmeleon"
+							className="Chip"
+							onClick={() => {
+								setNumber(5);
+							}}
+						/>
+						<Chip
+							label="charizard"
+							className="Chip"
+							onClick={() => {
+								setNumber(6);
+							}}
+						/>
+					</div>
+					<div className="chips-container">
+						<Chip
+							label="squirtle"
+							className="Chip"
+							onClick={() => {
+								setNumber(7);
+							}}
+						/>
+						<Chip
+							label="wartortle"
+							className="Chip"
+							onClick={() => {
+								setNumber(8);
+							}}
+						/>
+						<Chip
+							label="blastoise"
+							className="Chip"
+							onClick={() => {
+								setNumber(9);
+							}}
+						/>
+					</div>
+					<div className="chips-container last">
+						<Chip
+							label="caterpie"
+							className="Chip"
+							onClick={() => {
+								setNumber(10);
+							}}
+						/>
 					</div>
 				</div>
-				<div className="def"></div>
+				<div className="def">
+					<div className="def-header">
+						<h1>{ucFirst(name)}</h1>
+					</div>
+					<div className="img-container">
+						<img src={data ? data.sprites.front_shiny : "<p>Loading...</p>"} />
+					</div>
+					<div className="text">
+						<ul>
+							<li>Снялся в 78 сериях</li>
+							<li>id: {number}</li>
+							<li>height: {height}</li>
+							<li>attack: {attack}</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

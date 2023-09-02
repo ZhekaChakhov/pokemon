@@ -7,6 +7,7 @@
 html {
   font-size: 16px;
   box-sizing: border-box;
+  padding: 6.25rem 0 6.25rem 0;
 }
 
 body {
@@ -16,7 +17,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .App {
@@ -66,25 +66,25 @@ body {
     height: 31.25rem;
     margin-top: 3.5rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     .chips {
-      height: 8.125rem;
       width: 30.25rem;
 
-      .upper-chips {
+      .chips-container {
         height: 3.75rem;
+        margin-bottom: 0.625rem;
       }
 
-      .lower-chips {
-        height: 3.75rem;
-        margin-top: 0.625rem;
+      .last {
+        margin: 0;
       }
 
       .Chip {
         font-family: "Raleway";
         height: 3.75rem;
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 500;
         background-color: #1986EC;
         color: #FFF;
@@ -97,6 +97,41 @@ body {
     .def {
       height: 100%;
       width: 30.25rem;
+      padding: 2.75rem;
+      background-color: #000000;
+
+
+      .def-header {
+        h1 {
+          font-size: 3rem;
+          font-weight: 700;
+          color: #A0A0A0;
+          margin: 0;
+        }
+      }
+
+      .img-container {
+        text-align: center;
+
+        img {
+          height: 18rem;
+        }
+      }
+
+      .text {
+        height: 6.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #A0A0A0;
+
+        li {
+          list-style-type: none;
+        }
+        ul {
+          margin-left: 0;
+          padding-left: 0;
+        }
+      }
     }
   }
 }
