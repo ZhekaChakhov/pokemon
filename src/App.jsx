@@ -47,84 +47,76 @@ function App() {
 			</div>
 			<div className="main">
 				<div className="chips">
-					<div className="chips-container">
-						<Chip
-							label="bulbasaur"
-							className="Chip"
-							onClick={() => {
-								setNumber(1);
-							}}
-						/>
-						<Chip
-							label="ivysaur"
-							className="Chip"
-							onClick={() => {
-								setNumber(2);
-							}}
-						/>
-						<Chip
-							label="venusaur"
-							className="Chip"
-							onClick={() => {
-								setNumber(3);
-							}}
-						/>
-					</div>
-					<div className="chips-container">
-						<Chip
-							label="charmander"
-							className="Chip"
-							onClick={() => {
-								setNumber(4);
-							}}
-						/>
-						<Chip
-							label="charmeleon"
-							className="Chip"
-							onClick={() => {
-								setNumber(5);
-							}}
-						/>
-						<Chip
-							label="charizard"
-							className="Chip"
-							onClick={() => {
-								setNumber(6);
-							}}
-						/>
-					</div>
-					<div className="chips-container">
-						<Chip
-							label="squirtle"
-							className="Chip"
-							onClick={() => {
-								setNumber(7);
-							}}
-						/>
-						<Chip
-							label="wartortle"
-							className="Chip"
-							onClick={() => {
-								setNumber(8);
-							}}
-						/>
-						<Chip
-							label="blastoise"
-							className="Chip"
-							onClick={() => {
-								setNumber(9);
-							}}
-						/>
-					</div>
-					<div className="chips-container last">
-						<Chip
-							label="caterpie"
-							className="Chip"
-							onClick={() => {
-								setNumber(10);
-							}}
-						/>
-					</div>
+					<Chip
+						label="bulbasaur"
+						className="Chip"
+						onClick={() => {
+							setNumber(1);
+						}}
+					/>
+					<Chip
+						label="ivysaur"
+						className="Chip"
+						onClick={() => {
+							setNumber(2);
+						}}
+					/>
+					<Chip
+						label="venusaur"
+						className="Chip"
+						onClick={() => {
+							setNumber(3);
+						}}
+					/>
+					<Chip
+						label="charmander"
+						className="Chip"
+						onClick={() => {
+							setNumber(4);
+						}}
+					/>
+					<Chip
+						label="charmeleon"
+						className="Chip"
+						onClick={() => {
+							setNumber(5);
+						}}
+					/>
+					<Chip
+						label="charizard"
+						className="Chip"
+						onClick={() => {
+							setNumber(6);
+						}}
+					/>
+					<Chip
+						label="squirtle"
+						className="Chip"
+						onClick={() => {
+							setNumber(7);
+						}}
+					/>
+					<Chip
+						label="wartortle"
+						className="Chip"
+						onClick={() => {
+							setNumber(8);
+						}}
+					/>
+					<Chip
+						label="blastoise"
+						className="Chip"
+						onClick={() => {
+							setNumber(9);
+						}}
+					/>
+					<Chip
+						label="caterpie"
+						className="Chip last"
+						onClick={() => {
+							setNumber(10);
+						}}
+					/>
 				</div>
 				<div className="def">
 					<div className="def-header">

@@ -72,15 +72,6 @@ body {
     .chips {
       width: 30.25rem;
 
-      .chips-container {
-        height: 3.75rem;
-        margin-bottom: 0.625rem;
-      }
-
-      .last {
-        margin: 0;
-      }
-
       .Chip {
         font-family: "Raleway";
         height: 3.75rem;
@@ -90,7 +81,11 @@ body {
         color: #FFF;
         padding: 1rem;
         border-radius: 2.75rem;
-        margin-right: 0.25rem;
+        margin: 0 0.625rem 0.625rem 0;
+      }
+
+      .last {
+        margin: 0;
       }
     }
 
@@ -138,10 +133,24 @@ body {
 
 @media (max-width: 767px) {
 	html {
-    font-size: 10px;
+    font-size: 8px;
   }
 }
 
 @media (orientation: portrait) {
+  .App {
+    width: 100%;
+
+    .header {
+      width: 100%;
+    }
+
+    .main {
+      margin-top: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   /* Для вертикальной ориентации */
 }
