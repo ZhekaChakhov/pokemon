@@ -140,6 +140,7 @@ body {
 @media (orientation: portrait) {
   .App {
     width: 100%;
+    padding: 0;
 
     .header {
       width: 100%;
@@ -147,9 +148,27 @@ body {
 
     .main {
       margin-top: 3.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: block;
+
+      .chips {
+        width: 100%;
+  
+        .Chip {
+          height: 3.75rem;
+          width: 10.625rem;
+          margin: 0.25rem;
+        }
+  
+        .last {
+          margin: 0.25rem;
+        }
+      }
+  
+      .def {
+        height: 100%;
+        width: 100%;
+        margin-top: 1rem;
+      }
     }
   }
   /* Для вертикальной ориентации */
