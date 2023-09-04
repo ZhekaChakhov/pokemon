@@ -16,6 +16,7 @@ function App() {
 	const [number, setNumber] = React.useState(1);
 	const [height, setHeight] = React.useState();
 	const [attack, setAttack] = React.useState();
+	const [moves, setMoves] = React.useState();
 
 	const URL = `https://pokeapi.co/api/v2/pokemon/${number}`;
 
@@ -28,13 +29,12 @@ function App() {
 				setName(response.data.name);
 				setHeight(response.data.height);
 				setAttack(response.data.stats[1].base_stat);
+				setMoves(response.data.moves.length);
 			})
 			.catch((err) => {
 				window.alert(err);
 			});
 	}, [URL]);
-
-	console.log(data);
 
 	return (
 		<div className="App">
@@ -127,7 +127,7 @@ function App() {
 					</div>
 					<div className="text">
 						<ul>
-							<li>Снялся в 78 сериях</li>
+							<li>Снялся в {moves} сериях</li>
 							<li>id: {number}</li>
 							<li>height: {height}</li>
 							<li>attack: {attack}</li>
