@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.scss";
-import icon from "./assets/icon.svg";
+import icon from "./icon.svg";
 import Chip from "@mui/material/Chip";
 import axios from "axios";
 
